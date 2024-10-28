@@ -13,6 +13,9 @@ function initializeGame(){
   begin=false;
   losing=false;
   status.textContent=  "Begin by moving your mouse over the 'S'.";
+  boundaries.forEach((boundary) => {
+    boundary.classList.remove("highlighted");
+  });
    
 }
 
@@ -21,6 +24,7 @@ start.addEventListener("mouseover",()=>{
   begin=true;
   status.textContent="Game started! Reach the 'E' without touching the walls.";
 
+
 });
 
 boundaries.forEach((boundary) => {
@@ -28,6 +32,9 @@ boundaries.forEach((boundary) => {
     if (begin && !losing) {
       gameLost = true;
       status.textContent = "You lost! Try again by moving over 'S'.";
+      boundaries.forEach((boundary) => {
+        boundary.classList.add("highlighted");
+      });
     }
   });
 });
