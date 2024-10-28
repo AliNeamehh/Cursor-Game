@@ -33,12 +33,14 @@ boundaries.forEach((boundary) => {
 });
 
 end.addEventListener("mouseover", () => {
-  if (begin&& !Losing) {
+  if (begin&& !losing) {
     status.textContent = "Congratulations! You won!";
     gameStarted = false;
   }
 });
 
+
+start.addEventListener("click", initializeGame);
 
 
 
