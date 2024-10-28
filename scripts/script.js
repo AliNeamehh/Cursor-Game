@@ -23,6 +23,16 @@ start.addEventListener("mouseover",()=>{
 
 });
 
+boundaries.forEach((boundary) => {
+  boundary.addEventListener("mouseover", () => {
+    if (begin && !losing) {
+      gameLost = true;
+      boundaries.forEach((b) => b.classList.add("you-lose"));
+      status.textContent = "You lost! Try again by moving over 'S'.";
+    }
+  });
+});
+
 
 
 
