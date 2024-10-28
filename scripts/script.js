@@ -27,12 +27,17 @@ boundaries.forEach((boundary) => {
   boundary.addEventListener("mouseover", () => {
     if (begin && !losing) {
       gameLost = true;
-      boundaries.forEach((b) => b.classList.add("you-lose"));
       status.textContent = "You lost! Try again by moving over 'S'.";
     }
   });
 });
 
+end.addEventListener("mouseover", () => {
+  if (begin&& !Losing) {
+    status.textContent = "Congratulations! You won!";
+    gameStarted = false;
+  }
+});
 
 
 
